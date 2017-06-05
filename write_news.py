@@ -23,7 +23,8 @@ with open('news.json') as fp:
     for v in news:
         v['summary'] = BeautifulSoup(v['summary'], "html.parser").text\
             .replace('\n','')\
-            .replace('and more »', '')
+            .replace('and more »', '')\
+            .replace('大纪元', '')
         v['summary'] = re.sub(r'all\s\d+\snews articles', '', v['summary'])
 
 print(TEMPLATE%(TODAY, '\n\n'.join('▶ %s\n%s'%(v['summary'], v['link']) for v in news[:TOPK])))
