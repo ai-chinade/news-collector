@@ -5,6 +5,7 @@ TMP=news.tmp
 OUTPUT=news.json
 
 rm -rf $OUTPUT
+rm -rf $TMP
 
 function fetch_json {
     curl --silent $1 | jq '.items[] | {title, date:.pubDate, link:.guid|capture("cluster=(?<a>[a-zA-Z0-9.:/\\-_]+)")|.a, summary:.description}' >> $TMP
