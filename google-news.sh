@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 TMP=news.tmp
 OUTPUT=news.json
