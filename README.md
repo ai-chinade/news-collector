@@ -22,6 +22,6 @@ echo 'cacert=/etc/ssl/certs/ca-certificates.crt' > ~/.curlrc
 
 ## Running
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 python ./write_news.py
 ```
