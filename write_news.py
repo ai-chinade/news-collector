@@ -6,7 +6,8 @@ import time
 import json
 from bs4 import BeautifulSoup
 
-locale.setlocale(locale.LC_TIME, "zh_cn")
+# if unsupported locale setting reported, you can use locale -a to see whether zh_CN or zh_CN.utf-8 should be used
+locale.setlocale(locale.LC_TIME, "zh_CN.utf-8")
 news_txt = open('news.txt', 'w')
 sys.stdout = news_txt
 
